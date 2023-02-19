@@ -12,7 +12,9 @@ import 'package:provider/provider.dart';
 
 class UpdateScreen extends StatelessWidget {
   final formKey = GlobalKey<FormState>();
-  UpdateScreen({super.key});
+  UpdateScreen({super.key, required this.index});
+
+  final int index;
 
   updateData({required context}) async {
     log('updateData');
@@ -21,7 +23,7 @@ class UpdateScreen extends StatelessWidget {
 
       final studentDB = await Hive.openBox<StudentModel>('student_db');
       studentDB.putAt(
-        Provider.of<UpdateStudentProvider>(context, listen: false).id!,
+        Provider.of<UpdateStudentProvider>(context, listen: false).id ?? index,
         StudentModel(
             name: Provider.of<UpdateStudentProvider>(context, listen: false)
                 .nameController

@@ -55,7 +55,7 @@ class ListStudentWIdget extends StatelessWidget {
                         .updateStudent(data: data);
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => UpdateScreen(),
+                        builder: (context) => UpdateScreen(index: index),
                       ),
                     );
                   },

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:data_base_hive/db/functions/db_functions.dart';
 import 'package:data_base_hive/db/model/data_model.dart';
 import 'package:data_base_hive/providers/searchStudents_provider.dart';
@@ -13,12 +11,7 @@ class SearchStudent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('message');
     Provider.of<SearchStudentProvider>(context).initState();
-    // Future.delayed(
-    //     Duration.zero,
-    //     () => Provider.of<SearchStudentProvider>(context, listen: false)
-    //         .initState());
 
     getAllStudents();
     return Scaffold(
