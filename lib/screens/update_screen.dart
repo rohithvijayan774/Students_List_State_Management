@@ -21,7 +21,7 @@ class UpdateScreen extends StatelessWidget {
 
       final studentDB = await Hive.openBox<StudentModel>('student_db');
       studentDB.putAt(
-        Provider.of<UpdateStudentProvider>(context, listen: false).id,
+        Provider.of<UpdateStudentProvider>(context, listen: false).id!,
         StudentModel(
             name: Provider.of<UpdateStudentProvider>(context, listen: false)
                 .nameController

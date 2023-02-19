@@ -1,5 +1,6 @@
 import 'package:data_base_hive/db/model/data_model.dart';
 import 'package:data_base_hive/providers/addStudent_provider.dart';
+import 'package:data_base_hive/providers/searchStudents_provider.dart';
 import 'package:data_base_hive/providers/updateStudent_provider.dart';
 import 'package:data_base_hive/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<UpdateStudentProvider>(
           create: (_) => UpdateStudentProvider(),
+        ),
+        ChangeNotifierProvider<SearchStudentProvider>(
+          create: (_) => SearchStudentProvider(),
         ),
       ],
       child: MaterialApp(

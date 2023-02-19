@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/adapters.dart';
 
 class UpdateStudentProvider with ChangeNotifier {
-  int id = 0;
+  int? id;
   // String name = '';
   // String age = '';
   // String domain = '';
@@ -20,8 +20,8 @@ class UpdateStudentProvider with ChangeNotifier {
   TextEditingController numberController = TextEditingController();
   TextEditingController addressController = TextEditingController();
 
-
   Future<void> updateStudent({required StudentModel data}) async {
+    // id = data.id;
     nameController.text = data.name;
     ageController.text = data.age;
     domainController.text = data.domain;
